@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>巴黎铁塔 - 详情</title>
+    <!-- 引用Bootstrap库 -->
+    <script type="text/javascript" src="/bootstrap/jquery-3.7.1.min.js"></script>       
+    <script src="/bootstrap/bootstrap-3.3.7/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/bootstrap/bootstrap-3.3.7/dist/css/bootstrap.css">  
+    <link rel="stylesheet" href="/CSS/fu.css">  
+    <!-- 百度地图API_KEY -->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+</head>
+<body>
+    <header class="header navbar-fixed-top">
+        <div class="container_fluid">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header_log">
+                        <a href="/index.html"><span>乐游</span>达.</a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <nav class="header_menu">
+                        <ul>
+                            <li class="active"><a href="">交通路线</a></li>
+                            <li><a href="">在线预订</a></li>
+                            <li><a href="">个性化推荐</a></li>
+                            <li><a href="">旅游攻略</a></li>
+                            <li><a href="">用户评价</a></li>
+                            <li><a href="">社区互动</a></li>
+                        </ul>                        
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                          <label for="search-input" class="sr-only">Search</label>
+                          <input id="search-input" type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">搜索</button>
+                      </form>
+                </div>
+                <div class="col-lg-2">
+                    <div class="header_right">
+                        <div class="auth">
+                            <a href="">登录</a>
+                            <a href="">注册</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>    
+    <div class="container-fluid">
+        <div id="adv" class="row carousel myCarousel carousel-fade" data-ride="carousel">
+            <div class="col-lg-9">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="/picture/Burj/5.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="/picture/Burj/3.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="/picture/Burj/5.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="/picture/Burj/6.jpg" alt="">
+                    </div>
+                </div>
+                  <a href="#adv" class="carousel-control left" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                  </a>
+                  <a href="#adv" class="carousel-control right" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                  </a>
+                  <ul class="carousel-indicators">
+                    <li class="active" data-slide-to="0" data-target="#adv"></li>
+                    <li data-slide-to="1" data-target="#adv"></li>
+                    <li data-slide-to="2" data-target="#adv"></li>
+                    <li data-slide-to="3" data-target="#adv"></li>
+                  </ul>
+            </div>
+            <div class="col-md-3">
+                <h1>埃菲尔铁塔 (Tour Eiffel)</h1>
+                <p>是法国巴黎最著名的标志性建筑之一,也是世界上最知名的地标之一。</p>
+                <h2>建造背景</h2>
+                <p>目的:为了庆祝1789年法国大革命一百周年以及1889年的巴黎世界博览会而建造。<br>
+                   设计师:虽然以古斯塔夫·埃菲尔的名字命名,但实际上设计工作主要由莫里斯·康达(Maurice Koechlin)和埃米尔·诺古(Émile Nouguier)完成。<br>
+                   建造时间:1887年至1889年,仅用了两年的时间就完成了建设</p>
+                <h2>技术特点</h2>
+                <p>高度:铁塔高300米(不含天线),加上天线后的总高度为330米。<br>
+                    材料:使用了大约18,038块铁件和2.5万个铆钉。<br>
+                    重量:整个结构的总重量约为1万吨。</p>                                        
+            </div>
+        </div>
+        
+        <div class="col-12">
+            <!-- 地图容器？ -->
+            <div id="mapContainer"></div>
+        </div>
+        <script type="text/javascript">
+            function initMap() {
+                // 创建地图实例
+                var map = new BMap.Map("mapContainer");
+                
+                // 初始化地图, 设置中心点坐标和地图级别
+                var point = new BMap.Point(25.135252, 55.139268); // 阿拉伯塔酒店坐标
+                map.centerAndZoom(point, 15);
+                
+                // 添加地图类型控件
+                map.addControl(new BMap.MapTypeControl());
+                
+                // 开启地图滚轮缩放
+                map.enableScrollWheelZoom(true);
+                
+                // 添加标注
+                var marker = new BMap.Marker(point);
+                map.addOverlay(marker);
+            }            
+            // 当页面加载完毕后初始化地图
+            window.onload = initMap;
+        </script>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,209 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*框模型计算方式，包括了所有的内部组件*/
+    font-size: 12px;
+}
+header{
+    height: 70px;
+}
+body {
+    padding-top: 70px; /* 修改此值以匹配您的导航栏高度 */
+}
+@media (max-width: 991px) { /* 小于等于中等屏幕 */
+    body {
+        padding-top: 50px; /* 根据实际情况调整 */
+    }
+}
+
+@media (max-width: 767px) { /* 小于中等屏幕 */
+    body {
+        padding-top: 40px; /* 根据实际情况调整 */
+    }
+}
+
+@media (max-width: 575px) { /* 小于小型屏幕 */
+    body {
+        padding-top: 30px; /* 根据实际情况调整 */
+    }
+}
+a,a:hover a:focus{
+    text-decoration: none;
+    outline: none;
+}
+li{
+    list-style: none;
+    display: inline-block;
+}
+header{
+    background-color: #fff;
+    box-shadow: 0px 5px 10px rgba(91, 91, 91, 0.1);
+}
+.header_log{
+    padding: 12px 0;
+    text-align: center;
+}
+.header_log a:hover{
+    /* border-bottom: none; */
+    text-decoration: none;
+    
+}
+.header_log a{
+    display: inline-block;
+    color:#000;
+    font-size: 27px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+.header_log a span{
+    color: #ff7200;
+    font-size: 32px;
+    font-weight: 700px;
+}
+.header_menu,.header_right{
+    padding: 22px 0 10px;
+    text-align: center;
+}
+.navbar-form{
+    padding: 10px 15px 0 27px; 
+} 
+.header_menu ul li{
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+.header_menu ul li a{
+    color: #000;
+    font-size: 1.7rem;
+    font-weight: bold;
+    display: block;
+    padding: 2px 0;
+    position: relative;/*相对定位，文档流中保留其原始位置，然后根据top、right、bottom、left属性进行偏移*/
+    text-decoration: none;/*修饰文本的线条，无线条*/
+    outline: none;
+}
+.header_menu ul li a::after{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 80px;
+    height: 2px;
+    background-color: #ff7200;
+    transition: all 0.5s;/*平缓过度过度*/
+    transform: scale(0);/*变换缩放*/
+}
+.header_menu ul li:hover a::after{
+    transform: scale(1);
+}
+/* .header_menu ul li.active a::after{导航下划线
+    transform: scale(1);
+} */
+.header_menu ul li:last-child{
+    margin-right: 0;
+}
+/* .header_right{
+    text-align: center;重复
+    padding: 30px 0 27px;
+} */
+.header_right .auth{
+    display: inline-block;/*以行内块元素的形式显示*/
+    margin-right: 25px;
+}
+.header_right .auth a{
+    font-size: 17px;
+    color: #666666;
+    position: relative;
+    margin-right: 13px;
+    outline: none;
+}
+.header_right .auth a:last-child{/*查找作为其父元素的最后一个子元素的元素*/
+    margin-right: 0;
+}
+.header_right .auth a::after{/*专门匹配某元素内容区域之后的位置*/
+    position: absolute;/*绝对定位*/
+    right: -12px;
+    top: 0px;
+    content: '/';/*在指定位置插入新内容*/
+    font-size: 16px;
+}
+.header_right .auth a:last-child::after{
+    display: none;
+}
+.header_right>.auth a:hover{
+    /*border-color: #ff6d00;边框颜色*/
+    background-color: #24eeee;
+    box-shadow:1px 1px 1px 3px #e6e3e1;
+    color: #fff;/*字体颜色*/
+}
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="date"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.hotel-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.hotel-item {
+    width: calc(33.33% - 13.33px);
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.hotel-item img {
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: #f8f8f8;
+    padding: 10px 20px;
+    text-align: center;
+}
+form a{
+    color: #000; font-size: 14px;
+}

@@ -1,0 +1,145 @@
+body {
+    background-color: #f5f5f5;
+    font-family: 'Arial', sans-serif;
+}
+
+/* .navbar {
+    background-color: #3498db;
+} */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*框模型计算方式，包括了所有的内部组件*/
+}
+a,a:hover a:focus{
+    text-decoration: none;
+    outline: none;
+}
+li{
+    list-style: none;
+    display: inline-block;
+}
+header{
+    background-color: #fff;
+    box-shadow: 0px 5px 10px rgba(91, 91, 91, 0.1);
+}
+.header_log{
+    padding: 26px 0;
+    text-align: center;
+}
+.header_log a{
+    display: inline-block;
+    color:#000;
+    font-size: 27px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+.header_log a span{
+    color: #ff7200;
+    font-size: 32px;
+    font-weight: 700px;
+}
+.header_menu,.header_right{
+    padding: 30px 0 27px;
+    text-align: center;
+}
+.header_menu ul li{
+    position: relative;
+    display: inline-block;
+    margin-right: 40px;
+}
+.header_menu ul li a{
+    color: #000;
+    font-size: 17px;
+    font-weight: bold;
+    display: block;
+    padding: 2px 0;
+    position: relative;/*相对定位，文档流中保留其原始位置，然后根据top、right、bottom、left属性进行偏移*/
+    text-decoration: none;/*修饰文本的线条，无线条*/
+    outline: none;
+}
+.header_menu ul li a::after{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 80px;
+    height: 2px;
+    background-color: #ff7200;
+    transition: all 0.5s;/*平缓过度过度*/
+    transform: scale(0);/*变换缩放*/
+}
+.header_menu ul li:hover a::after{
+    transform: scale(1);
+}
+.header_menu ul li.active a::after{
+    transform: scale(1);
+}
+.header_menu ul li:last-child{
+    margin-right: 0;
+}
+.header_right{
+    text-align: center;
+    padding: 30px 0 27px;
+}
+.header_right .auth{
+    display: inline-block;/*以行内块元素的形式显示*/
+    margin-right: 25px;
+}
+.header_right .auth a{
+    font-size: 17px;
+    color: #666666;
+    position: relative;
+    margin-right: 13px;
+    outline: none;
+}
+.header_right .auth a:last-child{/*查找作为其父元素的最后一个子元素的元素*/
+    margin-right: 0;
+}
+.header_right .auth a::after{/*专门匹配某元素内容区域之后的位置*/
+    position: absolute;/*绝对定位*/
+    right: -12px;
+    top: 0px;
+    content: '/';/*在指定位置插入新内容*/
+    font-size: 16px;
+}
+.header_right .auth a:last-child::after{
+    display: none;
+}
+.img-fluid{
+    width: 108%;
+}
+.categories{
+    position: relative;
+    overflow: hidden;/*表示隐藏溢出部分,但不提供滚动条*/
+}
+  .categories .categories_item{
+    position: relative;
+    height: 260px;
+    display: flex;/*弹性布局的父元素独占布局中的一行*/
+    margin-bottom: 5px; 
+}
+.categories .categories_large_item{
+    height: 385px;
+}
+.categories .categories_text{
+    position: absolute;
+    left: 50px;
+    top: 366px;
+    z-index: 999;
+}
+/* .categories .categories_large_item .categories_text p{
+    margin-bottom: 15px;
+} */
+.categories .categories_large_item .categories_text h1{
+    color: #000;
+    font-family: "黑体";
+} 
+.btn-group .btn{
+    text-align: center;
+}
+/* .containe img{
+    width: 70px;
+    height: 70px;
+} */

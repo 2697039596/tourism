@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>火车票预订 & 酒店预订 - 乐游达</title>
+    <link rel="stylesheet" href="/CSS/xl.css">
+    <script type="text/javascript" src="/bootstrap/jquery-3.7.1.min.js"></script>       
+    <script src="/bootstrap/bootstrap-3.3.7/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/bootstrap/bootstrap-3.3.7/dist/css/bootstrap.css">
+</head>
+<body>
+    <header class="header navbar-fixed-top">
+        <div class="container_fluid">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header_log">
+                        <a href="/index.html"><span>乐游</span>达.</a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <nav class="header_menu">
+                        <ul>
+                            <li class="active"><a href="/nav/lx.html" target="_blank">交通路线</a></li>
+                            <li><a href="/nav/zxyd.html" target="_blank">在线预订</a></li>
+                            <li><a href="/nav/gxhtj.html" target="_blank">个性化推荐</a></li>
+                            <li><a href="/nav/gl.html" target="_blank">旅游攻略</a></li>
+                            <li><a href="/nav/yhpj.html" target="_blank">用户评价</a></li>
+                            <li><a href="/nav/sqhd.html" target="_blank">社区互动</a></li>
+                        </ul>                        
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                          <label for="search-input" class="sr-only">Search</label>
+                          <input id="search-input" type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">搜索</button>
+                      </form>
+                </div>
+                <div class="col-lg-2">
+                    <div class="header_right">
+                        <div class="auth">
+                            <a href="">登录</a>
+                            <a href="">注册</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="container_fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1>火车票预订</h1>
+                    <form>
+                        <div class="form-group">
+                            <label>出发城市</label>
+                            <input type="text" id="departure-city" name="departure-city" placeholder="请输入出发城市">
+                        </div>
+                        <div class="form-group">
+                            <label>到达城市</label>
+                            <input type="text" id="arrival-city" name="arrival-city" placeholder="请输入到达城市">
+                        </div>
+                        <div class="form-group">
+                            <label>出发日期</label>
+                            <input type="date" id="departure-date" name="departure-date">
+                        </div>
+                        <div class="form-group">
+                            <label>返回日期</label>
+                            <input type="date" id="return-date" name="return-date">
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="high-speed-only" name="high-speed-only">
+                            <label for="high-speed-only">只搜索高铁动车</label>
+                        </div>
+                        <button type="submit"><a href="/nav/junior/hc.html">搜索</a></button>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <h1>酒店预订</h1>
+                    <div class="hotel-list">
+                        <div class="hotel-item">
+                            <img src="/picture/Burj/xi/7t.png" alt="Hotel 1">
+                            <h3>七天假日酒店</h3>
+                            <p>地址：济南市历下区</p>
+                            <p>价格：¥300/晚</p>
+                            <a href="/nav/junior/jd.html">查看详情</a>
+                        </div>
+                        <div class="hotel-item">
+                            <img src="/picture/Burj/xi/jh.png" alt="Hotel 2">
+                            <h3>景华商务酒店</h3>
+                            <p>地址：济南高新区舜泰</p>
+                            <p>价格：¥700/晚</p>
+                            <a href="/nav/junior/jd.html">查看详情</a>
+                        </div>
+                        <div class="hotel-item">
+                            <img src="/picture/Burj/xi/5x.png" alt="Hotel 1">
+                            <h3>五星酒店</h3>
+                            <p>地址：济南市历下区</p>
+                            <p>价格：¥3000/晚</p>
+                            <a href="/nav/junior/jd.html">查看详情</a>
+                        </div>
+                        <!-- 更多酒店信息 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2023 乐游达. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="/bootstrap/jquery-3.7.1.min.js"></script>       
+    <script src="/bootstrap/bootstrap-3.3.7/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/bootstrap/bootstrap-3.3.7/dist/css/bootstrap.css">
+    <style>
+        
+        header{
+            height: 70px;
+        }
+        body {
+            padding-top: 70px; /* 修改此值以匹配您的导航栏高度 */
+        }
+        @media (max-width: 991px) { /* 小于等于中等屏幕 */
+            body {
+                padding-top: 50px; /* 根据实际情况调整 */
+            }
+        }
+
+        @media (max-width: 767px) { /* 小于中等屏幕 */
+            body {
+                padding-top: 40px; /* 根据实际情况调整 */
+            }
+        }
+
+        @media (max-width: 575px) { /* 小于小型屏幕 */
+            body {
+                padding-top: 30px; /* 根据实际情况调整 */
+            }
+        }
+        a,a:hover a:focus{
+            text-decoration: none;
+            outline: none;
+        }
+        li{
+            list-style: none;
+            display: inline-block;
+        }
+        header{
+            background-color: #fff;
+            box-shadow: 0px 5px 10px rgba(91, 91, 91, 0.1);
+        }
+        .header_log{
+            padding: 12px 0;
+            text-align: center;
+        }
+        .header_log a:hover{
+            /* border-bottom: none; */
+            text-decoration: none;
+            
+        }
+        .header_log a{
+            display: inline-block;
+            color:#000;
+            font-size: 27px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+        .header_log a span{
+            color: #ff7200;
+            font-size: 32px;
+            font-weight: 700px;
+        }
+        .header_menu,.header_right{
+            padding: 22px 0 10px;
+            text-align: center;
+        }
+        .navbar-form{
+            padding: 10px 15px 0 27px; 
+        } 
+        .header_menu ul li{
+            position: relative;
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .header_menu ul li a{
+            color: #000;
+            font-size: 1.7rem;
+            font-weight: bold;
+            display: block;
+            padding: 2px 0;
+            position: relative;/*相对定位，文档流中保留其原始位置，然后根据top、right、bottom、left属性进行偏移*/
+            text-decoration: none;/*修饰文本的线条，无线条*/
+            outline: none;
+        }
+        .header_menu ul li a::after{
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: 0;
+            width: 80px;
+            height: 2px;
+            background-color: #ff7200;
+            transition: all 0.5s;/*平缓过度过度*/
+            transform: scale(0);/*变换缩放*/
+        }
+        .header_menu ul li:hover a::after{
+            transform: scale(1);
+        }
+        /* .header_menu ul li.active a::after{导航下划线
+            transform: scale(1);
+        } */
+        .header_menu ul li:last-child{
+            margin-right: 0;
+        }
+        /* .header_right{
+            text-align: center;重复
+            padding: 30px 0 27px;
+        } */
+        .header_right .auth{
+            display: inline-block;/*以行内块元素的形式显示*/
+            margin-right: 25px;
+        }
+        .header_right .auth a{
+            font-size: 17px;
+            color: #666666;
+            position: relative;
+            margin-right: 13px;
+            outline: none;
+        }
+        .header_right .auth a:last-child{/*查找作为其父元素的最后一个子元素的元素*/
+            margin-right: 0;
+        }
+        .header_right .auth a::after{/*专门匹配某元素内容区域之后的位置*/
+            position: absolute;/*绝对定位*/
+            right: -12px;
+            top: 0px;
+            content: '/';/*在指定位置插入新内容*/
+            font-size: 16px;
+        }
+        .header_right .auth a:last-child::after{
+            display: none;
+        }
+        .header_right>.auth a:hover{
+            /*border-color: #ff6d00;边框颜色*/
+            background-color: #24eeee;
+            box-shadow:1px 1px 1px 3px #e6e3e1;
+            color: #fff;/*字体颜色*/
+        }
+        /* 导航条end */
+    </style>
+</head>
+<body>
+    <header class="header navbar-fixed-top">
+        <div class="container_fluid">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header_log">
+                        <a href="/index.html"><span>乐游</span>达.</a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <nav class="header_menu">
+                        <ul>
+                            <li class="active"><a href="/nav/lx.html" target="_blank">交通路线</a></li>
+                            <li><a href="/nav/zxyd.html" target="_blank">在线预订</a></li>
+                            <li><a href="/nav/gxhtj.html" target="_blank">个性化推荐</a></li>
+                            <li><a href="/nav/gl.html" target="_blank">旅游攻略</a></li>
+                            <li><a href="/nav/yhpj.html" target="_blank">用户评价</a></li>
+                           
+                        </ul>                        
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                          <label for="search-input" class="sr-only">Search</label>
+                          <input id="search-input" type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">搜索</button>
+                      </form>
+                </div>
+                <div class="col-lg-2">
+                    <div class="header_right">
+                        <div class="auth">
+                            <a href="">登录</a>
+                            <a href="">注册</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Hotel Booking</h5>
+                        <p class="card-text">
+                            <strong>Check-in Date:</strong> 8月29日（今天）<br>
+                            <strong>Check-out Date:</strong> 8月30日（明天）<br>
+                            <strong>Duration:</strong> 1晚，1位客人
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Single Room</h5>
+                        <p class="card-text">
+                            <img src="/picture/Burj/xi/drc.png" class="img-fluid mb-2" alt="Single Room">
+                            <strong>Bed Size:</strong> 1张1.2米单人床<br>
+                            <strong>Size:</strong> 10平方米<br>
+                            <strong>Window:</strong> 无窗<br>
+                            <strong>Smoking:</strong> 禁烟<br>
+                            <strong>Breakfast:</strong> 无早餐<br>
+                            <strong>Cancellation:</strong> 不可取消
+                        </p>
+                        <div class="d-flex justify-content-between">
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <a href="#" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Double Room A</h5>
+                        <p class="card-text">
+                            <img src="/picture/Burj/xi/src.png" class="img-fluid mb-2" alt="Double Room A">
+                            <strong>Bed Size:</strong> 1张1.5米双人床<br>
+                            <strong>Size:</strong> 14-18平方米<br>
+                            <strong>Window:</strong> 无窗<br>
+                            <strong>Smoking:</strong> 禁烟<br>
+                            <strong>Breakfast:</strong> 无早餐<br>
+                            <strong>Cancellation:</strong> 不可取消
+                        </p>
+                        <div class="d-flex justify-content-between">
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <a href="#" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
